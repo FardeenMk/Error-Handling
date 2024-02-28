@@ -25,7 +25,9 @@ The TollGate smart contract is designed to manage toll collection on a blockchai
 **License:**
 
 This project is licensed under the MIT License, which allows for free use, modification, and distribution, subject to certain conditions. Please refer to the SPDX-License-Identifier in the contract for more details.
+
 **Author**
+
 Fardeen makandar 
 
 fardeenmakandar99@gmail.com
