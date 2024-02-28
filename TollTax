@@ -1,0 +1,33 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract TollGate {
+    address public owner;
+    
+    constructor() {
+        owner = msg.sender;
+    }
+    
+    function checkFastTag(bool hasFastTag) public pure returns (string memory) {
+        assert(hasFastTag == true);
+        return "Yes";
+    }
+    
+    function getTollFees(uint8 wheels) public pure returns (uint256) {
+        require(wheels >= 2, "Invalid vehicle");
+        
+        if (wheels >= 4) {
+            return 100;
+        } else if (wheels == 2) {
+            revert("Fees are not applied for 2-wheelers");
+        } else {
+            return 0;
+        }
+    }
+    
+    function checkTrafficFine(bool hasFine) public pure {
+        if (hasFine) {
+            revert("Fine amount is added to Toll fees");
+        }
+    }
+}
